@@ -2,6 +2,9 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import PatientDashboard from "@/components/PatientDashboard";
 import PractitionerDashboard from "@/components/PractitionerDashboard";
+import BookingFlow from "@/components/BookingFlow";
+import EnhancedPractitionerCalendar from "@/components/EnhancedPractitionerCalendar";
+import NotificationCenter from "@/components/NotificationCenter";
 
 const Index = () => {
   return (
@@ -12,11 +15,17 @@ const Index = () => {
       {/* Features Overview */}
       <Features />
       
+      {/* Patient Booking Flow */}
+      <BookingFlow />
+      
       {/* Patient Dashboard Preview */}
       <PatientDashboard />
       
-      {/* Practitioner Dashboard Preview */}
-      <PractitionerDashboard />
+      {/* Enhanced Practitioner Calendar */}
+      <EnhancedPractitionerCalendar />
+      
+      {/* Notification Center */}
+      <NotificationCenter />
       
       {/* Footer */}
       <footer className="py-12 bg-gradient-to-t from-muted/50 to-background border-t border-border/50">
