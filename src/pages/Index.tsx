@@ -29,8 +29,8 @@ const Index = () => {
       
       {/* Footer */}
       <footer className="py-12 bg-gradient-to-t from-muted/50 to-background border-t border-border/50">
-        <div className="container mx-auto px-6 text-center">
-          <div className="mb-6">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
               AyurSutra
             </h3>
@@ -39,12 +39,28 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex justify-center space-x-8 text-sm text-muted-foreground">
-            <span>© 2024 AyurSutra</span>
-            <span>•</span>
-            <span>Transforming Panchakarma</span>
-            <span>•</span>
-            <span>Built with ❤️ for healing</span>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm">
+            <div className="flex space-x-6">
+              <button className="text-muted-foreground hover:text-primary transition-colors">About Us</button>
+              <button className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
+              <button className="text-muted-foreground hover:text-primary transition-colors">🌐 English</button>
+            </div>
+            
+            <div className="flex space-x-4">
+              <button className="text-muted-foreground hover:text-primary transition-colors">LinkedIn</button>
+              <button className="text-muted-foreground hover:text-primary transition-colors">Twitter</button>
+              <button className="text-muted-foreground hover:text-primary transition-colors">Instagram</button>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8 pt-8 border-t border-border/50">
+            <div className="flex justify-center space-x-8 text-sm text-muted-foreground">
+              <span>© 2024 AyurSutra</span>
+              <span>•</span>
+              <span>Transforming Panchakarma</span>
+              <span>•</span>
+              <span>Built with ❤️ for healing</span>
+            </div>
           </div>
         </div>
       </footer>

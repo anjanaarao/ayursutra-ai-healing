@@ -38,10 +38,10 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
-              Start Your Journey
+              Explore as Patient
             </Button>
             <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/5">
-              For Practitioners
+              Explore as Practitioner
             </Button>
           </div>
 

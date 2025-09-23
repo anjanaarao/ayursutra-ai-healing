@@ -4,39 +4,39 @@ import { Brain, Globe, BarChart3, Shield, Calendar, Users } from "lucide-react";
 const Features = () => {
   const features = [
     {
-      icon: Brain,
-      title: "AI-Driven Personalization",
-      description: "Your therapy adapts to you. Based on your feedback, AyurSutra fine-tunes schedules, therapy intensity and creates smarter group sessions.",
+      icon: Users,
+      title: "Multi-Dashboard Access",
+      description: "Seamless patient and practitioner dashboards connecting both sides of the Panchakarma journey with role-specific features.",
       gradient: "from-primary to-primary-glow"
+    },
+    {
+      icon: Brain,
+      title: "AI-Driven Personalization", 
+      description: "Your therapy adapts to you. Based on your feedback, AyurSutra fine-tunes schedules, therapy intensity and creates smarter group sessions.",
+      gradient: "from-secondary to-secondary"
     },
     {
       icon: Globe,
       title: "Scalable & Multilingual",
       description: "Care in your language, wherever you are. Designed to serve Tier-2 AYUSH centres in your own language.",
-      gradient: "from-secondary to-secondary"
-    },
-    {
-      icon: BarChart3,
-      title: "Progress Tracking",
-      description: "See your healing journey unfold. Visual graphs, progress bars, and milestones help track improvements step by step.",
       gradient: "from-accent to-accent"
     },
     {
-      icon: Shield,
-      title: "Streamlined Care",
-      description: "Get trusted care at one touch. Digitized protocols ensure consistent and reliable Panchakarma experience across all centres.",
+      icon: BarChart3,
+      title: "Progress Tracking with Visual Graphs",
+      description: "See your healing journey unfold. Visual graphs, progress bars, and milestones help track improvements step by step.",
       gradient: "from-primary to-secondary"
     },
     {
-      icon: Calendar,
-      title: "Smart Scheduling",
-      description: "AI/ML engine ensures conflict-free planning, manages rest periods, and adapts schedules based on patient feedback.",
+      icon: Shield,
+      title: "Streamlined Care Across Centres",
+      description: "Get trusted care at one touch. Digitized protocols ensure consistent and reliable Panchakarma experience across all centres.",
       gradient: "from-secondary to-accent"
     },
     {
-      icon: Users,
-      title: "Practitioner Tools",
-      description: "Smart calendar with color-coded scheduling. Direct links to patient history, precautions, and real-time treatment adjustments.",
+      icon: Calendar,
+      title: "Practitioner Flow Page",
+      description: "Smart calendar with drag-and-drop scheduling, color-coded indicators, patient insights linked to history & feedback, and AI conflict resolution.",
       gradient: "from-accent to-primary"
     }
   ];
