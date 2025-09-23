@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
-import MultiRoleDashboard from "@/components/MultiRoleDashboard";
 import PatientDashboard from "@/components/PatientDashboard";
 import PractitionerDashboard from "@/components/PractitionerDashboard";
 import BookingFlow from "@/components/BookingFlow";
@@ -15,9 +14,6 @@ const Index = () => {
       
       {/* Features Overview */}
       <Features />
-      
-      {/* Multi-Role Dashboard */}
-      <MultiRoleDashboard />
       
       {/* Patient Booking Flow */}
       <BookingFlow />
