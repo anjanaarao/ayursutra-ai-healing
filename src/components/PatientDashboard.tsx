@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Calendar, Clock, MapPin, TrendingUp, Heart, Activity } from "lucide-react";
+import { Calendar, Clock, MapPin, TrendingUp, Heart, Activity, MessageCircle } from "lucide-react";
 
 const PatientDashboard = () => {
   const upcomingSessions = [
@@ -17,7 +17,7 @@ const PatientDashboard = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
+    <section id="patient-dashboard" className="py-16 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -113,6 +113,20 @@ const PatientDashboard = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+                
+                {/* Feedback Button */}
+                <div className="pt-4 border-t border-border/50">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-secondary to-accent hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300"
+                    onClick={() => {
+                      // Handle feedback functionality here
+                      console.log('Opening feedback form...');
+                    }}
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Share Your Experience
+                  </Button>
                 </div>
               </CardContent>
             </Card>

@@ -37,10 +37,19 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
+              onClick={() => document.getElementById('patient-dashboard')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore as Patient
             </Button>
-            <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/5">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-primary/30 hover:bg-primary/5"
+              onClick={() => document.getElementById('practitioner-dashboard')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore as Practitioner
             </Button>
           </div>
