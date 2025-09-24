@@ -5,6 +5,7 @@ import PractitionerDashboard from "@/components/PractitionerDashboard";
 import BookingFlow from "@/components/BookingFlow";
 import EnhancedPractitionerCalendar from "@/components/EnhancedPractitionerCalendar";
 import NotificationCenter from "@/components/NotificationCenter";
+import VoiceAssistant from "@/components/VoiceAssistant";
 
 const Index = () => {
   return (
@@ -20,6 +21,9 @@ const Index = () => {
       
       {/* Patient Dashboard Preview */}
       <PatientDashboard />
+      
+      {/* Practitioner Dashboard Preview */}
+      <PractitionerDashboard />
       
       {/* Enhanced Practitioner Calendar */}
       <EnhancedPractitionerCalendar />
@@ -64,6 +68,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      
+      {/* Voice Assistant */}
+      <VoiceAssistant />
     </main>
   );
 };
