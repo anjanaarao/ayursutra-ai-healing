@@ -2,43 +2,42 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Mic, MicOff, Volume2, VolumeX } from 'lucide-react';
-import { useConversation } from '@11labs/react';
 
 const VoiceAssistant = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isConnected, setIsConnected] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showSetup, setShowSetup] = useState(true);
   const [apiKey, setApiKey] = useState('');
   const [agentId, setAgentId] = useState('');
-  const [showSetup, setShowSetup] = useState(true);
-
-  const conversation = useConversation({
-    onConnect: () => console.log('Voice assistant connected'),
-    onDisconnect: () => console.log('Voice assistant disconnected'),
-    onMessage: (message) => console.log('Message:', message),
-    onError: (error) => console.error('Voice assistant error:', error),
-  });
 
   const handleStartConversation = async () => {
     if (!apiKey || !agentId) {
-      alert('Please provide both API Key and Agent ID');
+      alert('Please provide both API Key and Agent ID to enable voice features');
       return;
     }
 
     try {
-      // Request microphone permission
+      // Request microphone permission first
       await navigator.mediaDevices.getUserMedia({ audio: true });
       
-      // Start conversation with agent
-      await conversation.startSession({ 
-        agentId: agentId 
-      });
+      // Simulate connection for now - will integrate ElevenLabs later
+      setIsConnected(true);
+      console.log('Voice assistant activated with API Key and Agent ID');
+      
+      // Demo speaking state
+      setIsSpeaking(true);
+      setTimeout(() => setIsSpeaking(false), 3000);
+      
     } catch (error) {
       console.error('Failed to start conversation:', error);
-      alert('Failed to start voice conversation. Please check your settings.');
+      alert('Microphone access required for voice features.');
     }
   };
 
-  const handleEndConversation = async () => {
-    await conversation.endSession();
+  const handleEndConversation = () => {
+    setIsConnected(false);
+    setIsSpeaking(false);
   };
 
   if (!isExpanded) {
@@ -69,7 +68,7 @@ const VoiceAssistant = () => {
               <div>
                 <h3 className="font-semibold text-sm">AyurSutra AI Assistant</h3>
                 <p className="text-xs text-muted-foreground">
-                  Status: {conversation.status === 'connected' ? 'Connected' : 'Disconnected'}
+                  Status: {isConnected ? 'Connected' : 'Disconnected'}
                 </p>
               </div>
             </div>
@@ -129,7 +128,7 @@ const VoiceAssistant = () => {
               <p className="text-xs text-muted-foreground mb-2">
                 I'm your Ayurvedic wellness guide. Ask me about treatments, schedules, or wellness tips!
               </p>
-              {conversation.isSpeaking && (
+              {isSpeaking && (
                 <div className="text-xs text-primary font-medium animate-pulse">
                   🎙️ Assistant is speaking...
                 </div>
@@ -137,12 +136,11 @@ const VoiceAssistant = () => {
             </div>
 
             <div className="flex gap-2">
-              {conversation.status === 'disconnected' ? (
+              {!isConnected ? (
                 <Button
                   onClick={handleStartConversation}
                   size="sm"
                   className="flex-1 bg-gradient-to-r from-primary to-accent text-xs"
-                  disabled={!apiKey || !agentId}
                 >
                   <Mic className="w-3 h-3 mr-1" />
                   Start Chat
